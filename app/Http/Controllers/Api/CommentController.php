@@ -10,7 +10,7 @@ class CommentController extends Controller
     public function index()
     {
         $comments = Comment::all();
-        return response()->json($comments);
+        return response()->json($comments, 200);
     }
 
     public function show($id)
@@ -21,7 +21,7 @@ class CommentController extends Controller
             return response()->json(['message' => 'Comment not found'], 404);
         }
 
-        return response()->json($comment);
+        return response()->json($comment, 200);
     }
 
     public function store(Request $request)

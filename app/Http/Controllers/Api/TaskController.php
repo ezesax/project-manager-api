@@ -10,7 +10,7 @@ class TaskController extends Controller
     public function index()
     {
         $tasks = Task::all();
-        return response()->json($tasks);
+        return response()->json($tasks, 200);
     }
 
     public function show($id)
@@ -21,7 +21,7 @@ class TaskController extends Controller
             return response()->json(['message' => 'Task not found'], 404);
         }
 
-        return response()->json($task);
+        return response()->json($task, 200);
     }
 
     public function store(Request $request)

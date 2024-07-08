@@ -10,7 +10,7 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::with('tasks')->get();
-        return response()->json($projects);
+        return response()->json($projects, 200);
     }
 
     public function show($id)
@@ -21,7 +21,7 @@ class ProjectController extends Controller
             return response()->json(['message' => 'Project not found'], 404);
         }
 
-        return response()->json($project);
+        return response()->json($project, 200);
     }
 
     public function store(Request $request)

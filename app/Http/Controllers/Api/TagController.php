@@ -10,7 +10,7 @@ class TagController extends Controller
     public function index()
     {
         $tags = Tag::all();
-        return response()->json($tags);
+        return response()->json($tags, 200);
     }
 
     public function show($id)
@@ -21,7 +21,7 @@ class TagController extends Controller
             return response()->json(['message' => 'Tag not found'], 404);
         }
 
-        return response()->json($tag);
+        return response()->json($tag, 200);
     }
 
     public function store(Request $request)
